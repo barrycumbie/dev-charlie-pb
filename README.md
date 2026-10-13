@@ -1,45 +1,102 @@
-# dev-charlie
+# Whack-a-Monster
 
-# game title
-> short tagline
+A simple browser game where players click monsters to earn points before time runs out!
 
-## authorship
-- name + link to your GitHub Profile, date, version
+## Authorship
 
-## user story 
-- **as a** ...be creative, the more specific the better 
-- **i want** ...
-- **so that** ...
+- **Author:** Parker Bell
+- **GitHub:** [pbell0330](https://github.com/pbell0330)
+- **Project:** dev|charlie
+- **Version:** 1.0
+- **Date:** 2026-10-13
 
-## narrative
-a bit more wordy blurb about the game...
+## User Story
 
-> lasers, shotguns, & grenades, oh my! 
-Step into adventure as the Brave Knight vs. The Dumb Dragon. Watch out for the Dragon's fart attack whilst dodging fiersome chickens. Use your arsenal to battle through increasingly harder levels. 
+- **As a** visitor to my GitHub profile,
+- **I want** to play a quick monster-clicking game,
+- **So that** I can have fun and try to beat my high score.
 
-## about the app
+## Narrative
 
-### each of these as lvl-3 headings...
+Whack-a-Monster is a simple browser-based arcade game. Players start a round and click monsters to earn points. The goal is to score as many points as possible before the 30-second timer reaches zero. Players can enter a name or play as a guest.
+
+## About the App
+
+### Planning and Game Ideas
+
+- **Planning issue:** [Whack-a-Monster Game Ideas and Planning](https://github.com/pbell0330/dev-charlie/issues/new)
+- **Wiki:** [View the project Wiki](https://github.com/pbell0330/dev-charlie/wiki)
+
+Replace the three placeholder URLs above with your actual GitHub links.
+
+### Directory Structure
+
+```text
+dev-charlie/
+├── index.html
+├── README.md
+├── wireframe.png
+```
+
+### Technologies and Tools
+
+- HTML5 for page structure
+- CSS3 for styling
+- JavaScript for game logic
+- jQuery for click events and page updates
+- Bootstrap 5 for layout and components
+- Bootstrap Icons for the navigation icon
+- Bootstrap modal for the leaderboard
+- sessionStorage for temporary leaderboard scores
+- GitHub for version control, issues, Wiki, and Pages
+- Visual Studio Code for editing code
+
+### How the Game Works
+
+1. The player enters a name or plays as a guest.
+2. The player clicks Start Game.
+3. Clicking the monster earns 10 points.
+4. The timer counts down from 30 seconds.
+5. When time runs out, the final score is displayed.
+6. Scores are saved temporarily in the browser session.
+
+### Code Example
+
+The following JavaScript handles monster clicks and increases the score:
+
+```javascript
+holes.on("click", function () {
+  if (playing && holes.index(this) === monster) {
+    score += 10;
+    $("#score").text(score);
+    showMonster();
+  }
+});
+```
+
+This event checks whether the game is running and whether the player clicked the current monster. If both conditions are true, it increases the score and displays another monster.
+
+### Validation and Accessibility
+
+- Used buttons for interactive game spaces and controls.
+- Added labels for the player name input.
+- Used an accessible live region for game messages.
+- Used readable text and contrasting colors.
+- Tested starting, resetting, scoring, and ending a game.
+- Further accessibility and browser testing can be completed as improvements.
 
 
-### wireframe & game ideas
+### Sprint 99: Future Ideas
 
-### project directory structure
+- Add new difficulty levels.
+- Add sound effects.
+- Add more monsters and bonus points.
 
-### tech stack
+See the Sprint 99 milestone and related issues in the repository.
 
-### code snippet
+## Links
 
-### future ideas
+- **Play the game:** [https://pbell0330.github.io/dev-charlie/](https://pbell0330.github.io/dev-charlie/)
+- **Repository:** [https://github.com/pbell0330/dev-charlie](https://github.com/pbell0330/dev-charlie)
+- **GitHub Profile:** [https://github.com/pbell0330](https://github.com/pbell0330)
 
-- links to wiki/wireframe & issue/game ideas
-- a `tree` of your directory structure 
-- a list of tech & tools 
-  - e.g., vsCode (live server, todo, prettier), HTML (emmet), CSS (normalize, bs5 & bs icons), js (jQ, jQui), GitHub (repo, readme/markdwon, wiki, issues, GitHub pages)...others? 
-- a code snippet: use triple backticks and code syntax highlighting to show off a cool portion of your code, 
-  - e.g., this button's click (show html code) hit's this event (show js) calls this f/n (more js) and updates the dom
-- validation & accessibilty
- - links & reports using Nu & Lighthouse
-- finally, create & link to sprint 99/future ideas
-  - create a milestone: sprint 99
-  - create at least 3 issues for future ideas & label them as sprint 99 milestone 
